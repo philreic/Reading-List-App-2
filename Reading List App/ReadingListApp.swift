@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
-struct Reading_List_AppApp: App {
+struct Reading_List_App: App {
+    init() {
+        // Set-up Firebase for the app
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ReadingListModel())
         }
     }
 }
